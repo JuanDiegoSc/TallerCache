@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.accessingdatajpa.CustomerRepositoryTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-04T18:46:09" hostname="DESKTOP-45N88LE" time="0.558">
+  <properties/>
+  <testcase name="testFindByLastName()" classname="com.example.accessingdatajpa.CustomerRepositoryTests" time="0.558"/>
+  <system-out><![CDATA[13:46:06.184 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.accessingdatajpa.CustomerRepositoryTests]: CustomerRepositoryTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:46:06.324 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.accessingdatajpa.AccessingDataJpaApplication for test class com.example.accessingdatajpa.CustomerRepositoryTests
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-10-04T13:46:06.742-05:00  INFO 10608 --- [    Test worker] c.e.a.CustomerRepositoryTests            : Starting CustomerRepositoryTests using Java 21.0.4 with PID 10608 (started by juans in C:\Users\juans\IdeaProjects\gs-accessing-data-jpa-main\gs-accessing-data-jpa-main\complete)
+2024-10-04T13:46:06.757-05:00  INFO 10608 --- [    Test worker] c.e.a.CustomerRepositoryTests            : No active profile set, falling back to 1 default profile: "default"
+2024-10-04T13:46:07.084-05:00  INFO 10608 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-04T13:46:07.146-05:00  INFO 10608 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interface.
+2024-10-04T13:46:07.209-05:00  INFO 10608 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-10-04T13:46:07.427-05:00  INFO 10608 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:3336b9b6-359b-4f52-8d74-ce8d5cbe44cc;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-10-04T13:46:07.724-05:00  INFO 10608 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-04T13:46:07.771-05:00  INFO 10608 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-04T13:46:07.818-05:00  INFO 10608 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-04T13:46:08.115-05:00  INFO 10608 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-04T13:46:08.974-05:00  INFO 10608 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists customer cascade 
+Hibernate: drop sequence if exists customer_seq
+Hibernate: create sequence customer_seq start with 1 increment by 50
+Hibernate: create table customer (id bigint not null, first_name varchar(255), last_name varchar(255), primary key (id))
+2024-10-04T13:46:09.006-05:00  INFO 10608 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-04T13:46:09.443-05:00  INFO 10608 --- [    Test worker] c.e.a.CustomerRepositoryTests            : Started CustomerRepositoryTests in 3.009 seconds (process running for 4.409)
+Hibernate: select next value for customer_seq
+Hibernate: insert into customer (first_name,last_name,id) values (?,?,?)
+Hibernate: select next value for customer_seq
+Hibernate: insert into customer (first_name,last_name,id) values (?,?,?)
+Hibernate: insert into customer (first_name,last_name,id) values (?,?,?)
+Hibernate: insert into customer (first_name,last_name,id) values (?,?,?)
+Hibernate: insert into customer (first_name,last_name,id) values (?,?,?)
+2024-10-04T13:46:09.537-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : Customers found with findAll():
+2024-10-04T13:46:09.537-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : -------------------------------
+Hibernate: select c1_0.id,c1_0.first_name,c1_0.last_name from customer c1_0
+2024-10-04T13:46:09.631-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : Customer[id=1, firstName='Jack', lastName='Bauer']
+2024-10-04T13:46:09.631-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : Customer[id=2, firstName='Chloe', lastName='O'Brian']
+2024-10-04T13:46:09.631-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : Customer[id=3, firstName='Kim', lastName='Bauer']
+2024-10-04T13:46:09.631-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : Customer[id=4, firstName='David', lastName='Palmer']
+2024-10-04T13:46:09.631-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : Customer[id=5, firstName='Michelle', lastName='Dessler']
+2024-10-04T13:46:09.631-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : 
+Hibernate: select c1_0.id,c1_0.first_name,c1_0.last_name from customer c1_0 where c1_0.id=?
+2024-10-04T13:46:09.646-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : Customer found with findById(1L):
+2024-10-04T13:46:09.646-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : --------------------------------
+2024-10-04T13:46:09.646-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : Customer[id=1, firstName='Jack', lastName='Bauer']
+2024-10-04T13:46:09.646-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : 
+2024-10-04T13:46:09.646-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : Customer found with findByLastName('Bauer'):
+2024-10-04T13:46:09.646-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : --------------------------------------------
+Hibernate: select c1_0.id,c1_0.first_name,c1_0.last_name from customer c1_0 where c1_0.last_name=?
+2024-10-04T13:46:09.693-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : Customer[id=1, firstName='Jack', lastName='Bauer']
+2024-10-04T13:46:09.693-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : Customer[id=3, firstName='Kim', lastName='Bauer']
+2024-10-04T13:46:09.693-05:00  INFO 10608 --- [    Test worker] c.e.a.AccessingDataJpaApplication        : 
+Hibernate: insert into customer (first_name,last_name,id) values (?,?,?)
+Hibernate: select c1_0.id,c1_0.first_name,c1_0.last_name from customer c1_0 where c1_0.last_name=?
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\juans\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.16\4a451ee6484abac3a498df0f3b33ed00a6fced4d\byte-buddy-agent-1.14.16.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
